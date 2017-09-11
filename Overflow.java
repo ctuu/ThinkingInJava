@@ -2,61 +2,61 @@ import java.util.*;
 import java.lang.*;
 
 public class Overflow {
-    public static void main(String[] args) {
-        byte a = 124;
-        short b = -32764;
-        for (int i = 0; i < 8; ++i) {
-            System.out.print(String.format("a =   %4d  ", a)); //类似 C 语言的格式化输出
-            bytetobin(a); //Byte 类型二进制表示
-            a += 1;
-        }
-
-        byte c = -1;
-        System.out.print("        " + c + "  ");
-        bytetobin(c); //随机测试
-
-        for (int i = 0; i < 8; ++i) {
-            System.out.print(String.format("b = %6d  ", b));
-            shorttobin(b); //Short 类型二进制表示
-            b -= 1;
-        }
+  public static void main(String[] args) {
+    byte a = 124;
+    short b = -32764;
+    for (int i = 0; i < 8; ++i) {
+      System.out.print(String.format("a =   %4d  ", a)); //类似 C 语言的格式化输出
+      bytetobin(a); // Byte 类型二进制表示
+      a += 1;
     }
 
-    public static void bytetobin(byte a) {
-        String str = Integer.toBinaryString(a); //整型转二进制表示并用字符串储存
-        // System.out.println(str);
-        String ans = new String(); //Java 对于非基本类型初始化
-        if (str.length() > 8) { //如果是负数
-            ans = str.substring(24, 28) + " " + str.substring(28, 32);//substring 从0开始前闭后开
-            System.out.print("原码：" + ans + " ");
-            String ant = new String();
-            for (int i = 0; i < ans.length(); ++i) { //反码
-                if (ans.charAt(i) == '0')
-                    ant += "1";
-                else if (ans.charAt(i) == ' ')
-                    ant += " ";
-                else
-                    ant += "0";
-            }
-            System.out.println(" 反码: " + ant);
-        } else {
-            ans = "0" + str.substring(0, 3) + " " + str.substring(3, 7);
-            System.out.println("原码：" + ans);
-        }
-    }
+    byte c = -1;
+    System.out.print("        " + c + "  ");
+    bytetobin(c); //随机测试
 
-    public static void shorttobin(short b) {
-        String str = Integer.toBinaryString(b);
-        // System.out.println(str);
-        String ans = new String();
-        if (str.length() > 16)
-            ans = str.substring(16, 20) + " " + str.substring(20, 24) + " " + str.substring(24, 28) + " "
-                    + str.substring(28, 32);
+    for (int i = 0; i < 8; ++i) {
+      System.out.print(String.format("b = %6d  ", b));
+      shorttobin(b); // Short 类型二进制表示
+      b -= 1;
+    }
+  }
+
+  public static void bytetobin(byte a) {
+    String str = Integer.toBinaryString(a); //整型转二进制表示并用字符串储存
+    // System.out.println(str);
+    String ans = new String(); // Java 对于非基本类型初始化
+    if (str.length() > 8) { //如果是负数
+      ans = str.substring(24, 28) + " " + str.substring(28, 32); // substring 从0开始前闭后开
+      System.out.print("原码：" + ans + " ");
+      String ant = new String();
+      for (int i = 0; i < ans.length(); ++i) { //反码
+        if (ans.charAt(i) == '0')
+          ant += "1";
+        else if (ans.charAt(i) == ' ')
+          ant += " ";
         else
-            ans = "0" + str.substring(0, 3) + " " + str.substring(3, 7) + " " + str.substring(7, 11) + " "
-                    + str.substring(11, 15);
-        System.out.println("原码：" + ans);
+          ant += "0";
+      }
+      System.out.println(" 反码: " + ant);
+    } else {
+      ans = "0" + str.substring(0, 3) + " " + str.substring(3, 7);
+      System.out.println("原码：" + ans);
     }
+  }
+
+  public static void shorttobin(short b) {
+    String str = Integer.toBinaryString(b);
+    // System.out.println(str);
+    String ans = new String();
+    if (str.length() > 16)
+      ans = str.substring(16, 20) + " " + str.substring(20, 24) + " " + str.substring(24, 28) + " "
+          + str.substring(28, 32);
+    else
+      ans = "0" + str.substring(0, 3) + " " + str.substring(3, 7) + " " + str.substring(7, 11) + " "
+          + str.substring(11, 15);
+    System.out.println("原码：" + ans);
+  }
 }
 /*
 Output:
