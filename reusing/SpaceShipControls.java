@@ -5,5 +5,5 @@ public class SpaceShipControls {
   void right(int velocity) {}
   void forward(int velocity) {}
   void back(int velocity) {}
-  void turBoost() {}
+  void turboBoost() {}
 }

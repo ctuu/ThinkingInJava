@@ -6,7 +6,7 @@ public class SpaceShipDelegation {
     this.name = name;
   }
 
-  public void bak(int velocity) {
+  public void back(int velocity) {
     controls.back(velocity);
   }
   public void down(int velocity) {
@@ -16,8 +16,20 @@ public class SpaceShipDelegation {
     controls.forward(velocity);
   }
   public void left(int velocity) {
-    controls.legt(velocity);
+    controls.left(velocity);
   }
   public void right(int velocity) {
     controls.right(velocity);
   }
+  public void turboBoost() {
+    controls.turboBoost();
+  }
+  public void up(int velocity) {
+    controls.up(velocity);
+  }
+  public static void main(String[] args) {
+    SpaceShipDelegation protector = 
+      new SpaceShipDelegation("NSEA Protector");
+      protector.forward(100);
+  }
+}
