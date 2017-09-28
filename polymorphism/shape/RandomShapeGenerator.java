@@ -1,4 +1,4 @@
-// package polymorphism.shape;
+package polymorphism.shape;
 import java.util.*;
 public class RandomShapeGenerator {
   private Random rand = new Random(47);

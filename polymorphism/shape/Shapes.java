@@ -1,5 +1,5 @@
-// package polymorphism.shape;
-// import polymorphism.shape.*;
+package polymorphism.shape;
+import polymorphism.shape.*;
 public class Shapes {
   private static RandomShapeGenerator gen = new RandomShapeGenerator();
   public static void main(String[]  args) {
