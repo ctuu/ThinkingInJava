@@ -21,7 +21,7 @@ class Downcase extends Processor {
 }
 
 class Splitter extends Processor {
-  String proess(Object input) {
+  String process(Object input) {
     return Arrays.toString(((String)input).split(" "));
   }
 }
