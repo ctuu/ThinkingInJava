@@ -5,10 +5,14 @@ public class Examination {
   private static final int MG = 60;
   public static void main(String[] args) {
     Scanner stdin = new Scanner(System.in);
-    System.out.println("Enter your scoring in attendance and homework:");
-    float atteHomeScore = stdin.nextFloat();
-    System.out.println("Enter your scoring in attendance:");
-    int attendance = stdin.nextInt();
+    try {
+      System.out.println("Enter your scoring in attendance and homework:");
+      float atteHomeScore = stdin.nextFloat();
+      System.out.println("Enter your scoring in attendance:");
+      int attendance = stdin.nextInt();
+    } finally {
+      stdin.close();
+    }
     if (atteHomeScore < MG || attendance < MC * CP)
       System.out.println("You are not qualified for the exam.");
     else
