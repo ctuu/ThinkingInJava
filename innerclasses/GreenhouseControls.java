@@ -1,5 +1,4 @@
 import innerclasses.controller.*;
-
 public class GreenhouseControls extends Controller {
   private boolean light = false;
   public class LightOn extends Event {
