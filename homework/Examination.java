@@ -10,12 +10,12 @@ public class Examination {
       float atteHomeScore = stdin.nextFloat();
       System.out.println("Enter your scoring in attendance:");
       int attendance = stdin.nextInt();
+      if (atteHomeScore < MG || attendance < MC * CP)
+        System.out.println("You are not qualified for the exam.");
+      else
+        System.out.println("You have the eligibility of the exam");
     } finally {
       stdin.close();
     }
-    if (atteHomeScore < MG || attendance < MC * CP)
-      System.out.println("You are not qualified for the exam.");
-    else
-      System.out.println("You have the eligibility of the exam");
   }
 }

@@ -1,21 +1,22 @@
-import java.io.*;
-import java.util.*;
-import java.math.*;
-public class Main {
-  public static void main(String[] args) {
-    Scanner cin = new Scanner(System.in);
-    int n = cin.nextInt();
-    for (int i = 1; i <= n; ++i) {
-      if (i > 1)
-        System.out.println();
-      BigInteger a = new BigInteger("0"), b = new BigInteger("0"), c = new BigInteger("0");
-      a = cin.nextBigInteger();
-      b = cin.nextBigInteger();
-      System.out.println("Case " + i + ":");
-      System.out.print(a + " + " + b + " = ");
-      b = b.add(a);
-      System.out.print(b);
-      System.out.println();
-    }
-  }
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+public class Main
+{
+   private static String REGEX = "a*b";
+   private static String INPUT = "aabfooaabfooabfoob";
+   private static String REPLACE = "-";
+   public static void main(String[] args) {
+      Pattern p = Pattern.compile(REGEX);
+      // 获取 matcher 对象
+      Matcher m = p.matcher(INPUT);
+      StringBuffer sb = new StringBuffer();
+      while(m.find()){
+        System.out.println("! " + sb.toString());
+        System.out.println("* " + m);
+         m.appendReplacement(sb,REPLACE);
+      }
+      m.appendTail(sb);
+      System.out.println(sb.toString());
+   }
 }
